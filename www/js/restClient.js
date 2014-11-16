@@ -266,11 +266,12 @@ function getList(item, $list) {
     }
 }
 
-function getListVacunas(){
-	//console.log('asdasdasdasdasdasdasdasd');
+function getListVacunas(email){
+	setEmailPaciente(email);
+	console.log('asdasdasdasdasdasdasdasd');
 	$('#plo').remove();
 	var $ul = $('<table id="plo" border="1"> <tr><td><strong> Age </strong></td><td><strong> Vaccine </strong></td><td><strong> Dose </strong> <td><strong> Next date </strong> </td></tr></table>');
-	$.post('http://bcontrol.herokuapp.com/server.php', {opcion: '9', email: emailLog})
+	$.post('http://bcontrol.herokuapp.com/server.php', {opcion: '9', email: emailPaciente})
 			.done(function(data) {
 				console.log("Hola");
 				rows = JSON.parse(data);
@@ -282,6 +283,24 @@ function getListVacunas(){
 			//console.log('DONEEEEEEEEEEEEE');
 			});
 }
+
+function getListVacunasSinMail(){
+	console.log('asdasdasdasdasdasdasdasd');
+	$('#plo').remove();
+	var $ul = $('<table id="plo" border="1"> <tr><td><strong> Age </strong></td><td><strong> Vaccine </strong></td><td><strong> Dose </strong> <td><strong> Next date </strong> </td></tr></table>');
+	$.post('http://bcontrol.herokuapp.com/server.php', {opcion: '9', email: emailPaciente})
+			.done(function(data) {
+				console.log("Hola");
+				rows = JSON.parse(data);
+				$.each(rows, function(index, row) {
+			    	getListVacc(row, $ul);
+			    	console.log(getListVacc);
+			    });
+			    $ul.appendTo($("#vacAll"));
+			//console.log('DONEEEEEEEEEEEEE');
+			});
+}
+
 function getListVacc(item, $list) {
 	console.log("Entro");
     if ($.isArray(item)) {
@@ -358,8 +377,8 @@ function getListVaccAll(item, $list) {
 }
 
 function addVAccToPaciente(cod){
-	console.log('Codigo de la vacuna === ' + cod);
-		$.post('http://bcontrol.herokuapp.com/server.php', {opcion: '20', codigo_vh: cod, email: emailLog})
+	console.log('Codigo de la vacuna === ' + cod + 'email pas === ' + emailPaciente);
+		$.post('http://bcontrol.herokuapp.com/server.php', {opcion: '20', codigo_vh: cod, email: emailPaciente})
 			.done(function(data) {
 				console.log(data);
 				var convertidoAJson = JSON.parse(data);
@@ -367,7 +386,7 @@ function addVAccToPaciente(cod){
 				if(resultado === '1'){
 					alert('Done!');
 				}else{
-					alert('Something was wrong!');
+					alert('Vaccine has already been added!');
 				}
 				
 			});
@@ -394,6 +413,51 @@ function getHistorialDesarrolloPacienteDoctor(){
 }
 
 
+function getListPacientesVac(){
+	//spinnerplugin.show();
+    $('#ewew').remove();
+	var $ul = $('<ul id="ewew" class="asdfstyle"></ul>');
+	console.log('wqeqweqweqwe');
+	$.post('http://bcontrol.herokuapp.com/server.php', {opcion: '6', email: emailLog})
+			.done(function(data) {
+				rows = JSON.parse(data);
+				//console.log(data);
+				$.each(rows, function(index, row) {
+			    	getListPacientesShowVac(row, $ul);
+			    });
+			    $ul.appendTo($("#listPo"));
+			//console.log('DONEEEEEEEEEEEEE');
+			});
+			//spinnerplugin.hide();
+}
+
+function getListPacientesShowVac(item, $list) {
+
+    if ($.isArray(item)) {
+        $.each(item, function(key, value) {
+            getList(value, $list);
+        });
+        return;
+    }
+
+    if (item) {
+    	console.log(item);
+        if (item.nombre) {
+        	var $li = $('<li />');
+        	console.log(item.nombre);
+
+            $li.append($('<a class="astyle" href="#vaccines" onclick="getListVacunas(\''+item.email+'\')">'+ item.nombre + ' ' + item.apellido +'</a>'));
+        }
+        if (item.child && item.child.length) {
+            var $sublist = $("<ul/>");
+            getList(item.child, $sublist);
+            $li.append($sublist);
+        }
+        $list.append($li);
+    }
+}
+
+
 function getListPacientes(){
 	//spinnerplugin.show();
     $('#ewe').remove();
@@ -411,8 +475,6 @@ function getListPacientes(){
 			});
 			//spinnerplugin.hide();
 }
-
-var emailPaciente = '';
 
 function getListPacientesShow(item, $list) {
 
@@ -439,6 +501,8 @@ function getListPacientesShow(item, $list) {
         $list.append($li);
     }
 }
+
+var emailPaciente = '';
 
 function setEmailPaciente(email){
 	console.log('catatatatatatatata');

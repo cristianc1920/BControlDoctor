@@ -14,7 +14,7 @@
         <div id="app" >
             <div id="home-page" data-role="page" class="wp">
                 <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
-                    <h1>Wellcome</h1>
+                    <h1>Welcome</h1>
                 </div>
                 <div data-role="content" >
                     <div id="logoContainer" class="centerText">
@@ -79,14 +79,36 @@
                 </div>
                 <div data-role="content" >
                     <H2>My patients: </H2>
-                    <div id="listP">
+                    <div id="listP" class="listP">
                     </div>
                 </div>
                 <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
                     <div id="navbar" data-role="navbar">
                         <ul>
-                            <li><a id="map-button" href="#vaccines" data-icon="flat-location" onclick="getListVacunas()">vaccines</a></li>
+                            <li><a id="map-button" href="#listPacientesVac" data-icon="flat-location" onclick="getListPacientesVac()">vaccines</a></li>
                             <li><a id="list-button" href="#listPacientes" data-theme="b" data-icon="flat-menu" onclick="getListPacientes()">Patients</a></li>
+                            <li><a id="search-button" href="#prof" data-icon="flat-man" onclick="getPaciente()">Profile</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div  id="listPacientesVac" data-role="page">
+                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
+                    <a data-rel="back"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+                    <a href="#home-page"  data-role="button" data-icon="flat-lock" data-inline="true" >Log Out</a>
+                    <h1>Patient List</h1>
+                </div>
+                <div data-role="content" >
+                    <H2>My patients: </H2>
+                    <div id="listPo" class="listP">
+                    </div>
+                </div>
+                <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
+                    <div id="navbar" data-role="navbar">
+                        <ul>
+                            <li><a id="map-button" href="#listPacientesVac" data-theme="b"  data-icon="flat-location" onclick="getListPacientesVac()">vaccines</a></li>
+                            <li><a id="list-button" href="#listPacientes" data-icon="flat-menu" onclick="getListPacientes()">Patients</a></li>
                             <li><a id="search-button" href="#prof" data-icon="flat-man" onclick="getPaciente()">Profile</a></li>
                         </ul>
                     </div>
@@ -108,7 +130,7 @@
                 <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
                     <div id="navbar" data-role="navbar">
                         <ul>
-                            <li><a id="map-button" href="#vaccines" data-icon="flat-location" onclick="getListVacunas()">vaccines</a></li>
+                            <li><a id="map-button" href="#listPacientesVac" data-icon="flat-location" onclick="getListPacientesVac()">vaccines</a></li>
                             <li><a id="list-button" href="#listPacientes" data-theme="b" onclick="getListPacientes()" data-icon="flat-menu">Patients</a></li>
                             <li><a id="search-button" href="#prof" data-icon="flat-man" onclick="getPaciente()">Profile</a></li>
                         </ul>
@@ -131,7 +153,7 @@
                 <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
                     <div id="navbar" data-role="navbar">
                         <ul>
-                            <li><a id="map-button" href="#vaccines" data-icon="flat-location" onclick="getListVacunas()">vaccines</a></li>
+                            <li><a id="map-button" href="#listPacientesVac" data-icon="flat-location" onclick="getListPacientesVac()">vaccines</a></li>
                             <li><a id="list-button" href="#listPacientes" data-icon="flat-menu" onclick="getListPacientes()" data-theme="b">Patients</a></li>
                             <li><a id="search-button" href="#prof" data-icon="flat-man" onclick="getPaciente()">Profile</a></li>
                         </ul>
@@ -154,7 +176,7 @@
                 <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
                     <div id="navbar" data-role="navbar">
                         <ul>
-                            <li><a id="map-button" href="#vaccines" data-icon="flat-location" onclick="getListVacunas()">vaccines</a></li>
+                            <li><a id="map-button" href="#listPacientesVac" data-icon="flat-location" onclick="getListPacientesVac()">vaccines</a></li>
                             <li><a id="list-button" href="#listPacientes" onclick="getListPacientes()" data-icon="flat-menu">Patients</a></li>
                             <li><a id="search-button" href="#prof" data-icon="flat-man" onclick="getPaciente()" >Profile</a></li>
                         </ul>
@@ -185,7 +207,7 @@
                 <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
                     <div id="navbar" data-role="navbar">
                         <ul>
-                            <li><a id="map-button" href="#vaccines" data-icon="flat-location" onclick="getListVacunas()">vaccines</a></li>
+                            <li><a id="map-button" href="#listPacientesVac" data-icon="flat-location" onclick="getListPacientesVac()">vaccines</a></li>
                             <li><a id="list-button" onclick="getListPacientes()" href="#listPacientes" data-icon="flat-menu" data-theme="b">Patients</a></li>
                             <li><a id="search-button" href="#prof" data-icon="flat-man" onclick="getPaciente()" >Profile</a></li>
                         </ul>
@@ -200,7 +222,7 @@
                     <h1>Detalle</h1>
                 </div>
                 <div data-role="content" >
-                    <label for="address">Dianostic: </label>
+                    <label for="address">Diagnostic: </label>
                     <input type="text" name="address" id="aa" data-mini="true" readonly/>
                     <label for="address">Age: </label>
                     <input type="text" name="address" id="bb" data-mini="true" readonly/>
@@ -210,7 +232,7 @@
                 <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
                     <div id="navbar" data-role="navbar">
                         <ul>
-                            <li><a id="map-button" href="#vaccines" data-icon="flat-location" onclick="getListVacunas()">vaccines</a></li>
+                            <li><a id="map-button" href="#listPacientesVac" data-icon="flat-location" onclick="getListPacientesVac()">vaccines</a></li>
                             <li><a id="list-button" href="#listPacientes" data-icon="flat-menu" onclick="getListPacientes()" data-theme="b">Patients</a></li>
                             <li><a id="search-button" href="#prof" data-icon="flat-man" onclick="getPaciente()" >Profile</a></li>
                         </ul>
@@ -232,7 +254,7 @@
                 <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
                     <div id="navbar" data-role="navbar">
                         <ul>
-                            <li><a id="map-button" href="#vaccines" data-icon="flat-location" onclick="getListVacunas()">vaccines</a></li>
+                            <li><a id="map-button" href="#listPacientesVac" data-icon="flat-location" onclick="getListPacientesVac()">vaccines</a></li>
                             <li><a id="list-button" onclick="getListPacientes()" href="#listPacientes" data-theme="b" data-icon="flat-menu">Patients</a></li>
                             <li><a id="search-button" href="#prof" data-icon="flat-man" onclick="getPaciente()" >Profile</a></li>
                         </ul>
@@ -256,7 +278,7 @@
                 <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
                     <div id="navbar" data-role="navbar">
                         <ul>
-                            <li><a id="map-button" href="#vaccines" data-theme="b" data-icon="flat-location" onclick="getListVacunas()">vaccines</a></li>
+                            <li><a id="map-button" href="#listPacientesVac" data-theme="b" data-icon="flat-location" onclick="getListPacientesVac()">vaccines</a></li>
                             <li><a id="list-button" href="#listPacientes" onclick="getListPacientes()" data-icon="flat-menu">Patients</a></li>
                             <li><a id="search-button" href="#prof" data-icon="flat-man" onclick="getPaciente()" >Profile</a></li>
                         </ul>
@@ -269,7 +291,7 @@
                     <h1>Vaccines</h1>
                 </div>
                 <div data-role="content" >
-                    <a data-icon="flat-heart" data-theme="d" href="#vaccines" onclick="getListVacunas()" data-role="button" >Show my vaccines</a>
+                    <a data-icon="flat-heart" data-theme="d" href="#vaccines" onclick='getListVacunasSinMail()' data-role="button" >Show my vaccines</a>
                     
                     <h2 id="welHead2"> All vaccines: </h2>
                     <div id="vacAll2">
@@ -292,7 +314,7 @@
                 <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
                     <div id="navbar" data-role="navbar">
                         <ul>
-                            <li><a id="map-button" href="#vaccines" data-icon="flat-location" onclick="getListVacunas()">vaccines</a></li>
+                            <li><a id="map-button" href="#listPacientesVac" data-icon="flat-location" onclick="getListPacientesVac()">vaccines</a></li>
                             <li><a id="list-button" onclick="getListPacientes()" href="#listPacientes" data-icon="flat-menu">Patients</a></li>
                             <li><a id="search-button" href="#prof" data-theme="b" data-icon="flat-man" onclick="getPaciente()">Profile</a></li>
                         </ul>
@@ -318,7 +340,7 @@
                 <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
                     <div id="navbar" data-role="navbar">
                         <ul>
-                            <li><a id="map-button" href="#vaccines" data-icon="flat-location" onclick="getListVacunas()">vaccines</a></li>
+                            <li><a id="map-button" href="#listPacientesVac" data-icon="flat-location" onclick="getListPacientesVac()">vaccines</a></li>
                             <li><a id="list-button" onclick="getListPacientes()" href="#listPacientes" data-theme="b" data-icon="flat-menu" data-theme="b">Patients</a></li>
                             <li><a id="search-button" href="#prof" data-icon="flat-man" onclick="getPaciente()">Profile</a></li>
                         </ul>
@@ -350,7 +372,7 @@
                 <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
                     <div id="navbar" data-role="navbar">
                         <ul>
-                            <li><a id="map-button" href="#vaccines" data-icon="flat-location" onclick="getListVacunas()">vaccines</a></li>
+                            <li><a id="map-button" href="#listPacientesVac" data-icon="flat-location" onclick="getListPacientesVac()">vaccines</a></li>
                             <li><a id="list-button" onclick="getListPacientes()" href="#listPacientes" data-theme="b" data-icon="flat-menu" data-theme="b">Patients</a></li>
                             <li><a id="search-button" href="#prof" data-icon="flat-man" onclick="getPaciente()">Profile</a></li>
                         </ul>
@@ -382,7 +404,7 @@
                 <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
                     <div id="navbar" data-role="navbar">
                         <ul>
-                            <li><a id="map-button" href="#vaccines" data-icon="flat-location" onclick="getListVacunas()">vaccines</a></li>
+                            <li><a id="map-button" href="#listPacientesVac" data-icon="flat-location" onclick="getListPacientesVac()">vaccines</a></li>
                             <li><a id="list-button" href="#listPacientes" data-theme="b" onclick="getListPacientes()" data-icon="flat-menu">Patients</a></li>
                             <li><a id="search-button" href="#prof" data-icon="flat-man" onclick="getPaciente()">Profile</a></li>
                         </ul>
@@ -410,15 +432,12 @@
                         <label for="pass3">Password</label>
                         <input type="password" name="password" id="pass3" data-mini="true" placeholder="********"/>
                         <a data-icon="flat-heart" data-theme="g" data-role="button" onclick="updatePaciente()" >Save</a>
-                    
-                    
-                    <a data-icon="flat-plus" data-theme="b" href="#shDoctor"  data-role="button" onclick="getListDoctores()" >Edit Doctor</a>
                 </div>
                 </form>
                 <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
                     <div id="navbar" data-role="navbar">
                         <ul>
-                            <li><a id="map-button" href="#vaccines" data-icon="flat-location" onclick="getListVacunas()">vaccines</a></li>
+                            <li><a id="map-button" href="#listPacientesVac" data-icon="flat-location" onclick="getListPacientesVac()">vaccines</a></li>
                             <li><a id="list-button" href="#listPacientes" data-icon="flat-menu">Diagnostics</a></li>
                             <li><a id="search-button" href="#prof" data-icon="flat-man" data-theme="b">Profile</a></li>
                         </ul>
