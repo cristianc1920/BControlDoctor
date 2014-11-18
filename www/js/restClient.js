@@ -1,5 +1,3 @@
-
-
 localStorage.emailLog = '';
 localStorage.logPc = 0;
 
@@ -199,7 +197,7 @@ function makeDes2To4(){
 	}else{
 		isBack = 0;
 		if (countNo >= 1){
-			addDesarrollo('Desarrollo retrasado');
+			addDesarrollo('Probable retraso del desarrollo. \n Se recomienda programar una cita con un pediatra o neuropediatra en los proximos 7 dias para seguimiento.');
 		}else{
 			$.mobile.changePage('#desFeno','slide');
 		}
@@ -209,18 +207,18 @@ function makeDes2To4(){
 
 function desempateDesFeno(){
 	if ($("#select-choice-add").val()==='val1'){
-		addDesarrollo('Posible retraso desarrollo');
+		addDesarrollo('Probable retraso del desarrollo. \n Se recomienda programar una cita con un pediatra o neuropediatra en los proximos 7 dias para seguimiento');
 	}else{
 		//mirar tabla
-		addDesarrollo('con per entre edad');
+		addDesarrollo('Riesgo de problema en el desarrollo. \n Se recomienda programar una cita con un pediatra o neuropediatra en los proximos 30 dias para seguimiento');
 	}
 }
 
 function desempateDes(){
 	if ($("#select-choice-add").val()==='val1'){
-		addDesarrollo('Todo bien con riesgo');
+		addDesarrollo('Desarrollo normal con factores de riesgo. \n Se recomienda programa una cita con un pediatra o neuropediatra en los proximos 30 dias para seguimiento.');
 	}else{
-		addDesarrollo('Todo bien');
+		addDesarrollo('Desarrollo normal. \n Felicitaciones, su hijo se esta desarrollando correctamente. Recuerde programa consulta con un pediatra o neuropediatra en los proximos 60 dias para seguimiento');
 	}
 }
 
@@ -264,7 +262,7 @@ function makeDes4To6(){
 	}else{
 		isBack = 0;
 		if (countNo >= 1){
-			addDesarrollo('Desarrollo retrasado');
+			addDesarrollo('Probable retraso del desarrollo. \n Se recomienda programar una cita con un pediatra o neuropediatra en los proximos 7 dias para seguimiento.');
 		}else{
 			$.mobile.changePage('#desFeno','slide');
 		}
@@ -311,7 +309,7 @@ function makeDes6To9(){
 	}else{
 		isBack = 0;
 		if (countNo >= 1){
-			addDesarrollo('Desarrollo retrasado');
+			addDesarrollo('Probable retraso del desarrollo. \n Se recomienda programar una cita con un pediatra o neuropediatra en los proximos 7 dias para seguimiento.');
 		}else{
 			$.mobile.changePage('#desFeno','slide');
 		}
@@ -358,7 +356,7 @@ function makeDes9To12(){
 	}else{
 		isBack = 0;
 		if (countNo >= 1){
-			addDesarrollo('Desarrollo retrasado');
+			addDesarrollo('Probable retraso del desarrollo. \n Se recomienda programar una cita con un pediatra o neuropediatra en los proximos 7 dias para seguimiento.');
 		}else{
 			$.mobile.changePage('#desFeno','slide');
 		}
@@ -405,7 +403,7 @@ function makeDes12To15(){
 	}else{
 		isBack = 0;
 		if (countNo >= 1){
-			addDesarrollo('Desarrollo retrasado');
+			addDesarrollo('Probable retraso del desarrollo. \n Se recomienda programar una cita con un pediatra o neuropediatra en los proximos 7 dias para seguimiento.');
 		}else{
 			$.mobile.changePage('#desFeno','slide');
 		}
@@ -452,7 +450,7 @@ function makeDes15To18(){
 	}else{
 		isBack = 0;
 		if (countNo >= 1){
-			addDesarrollo('Desarrollo retrasado');
+			addDesarrollo('Probable retraso del desarrollo. \n Se recomienda programar una cita con un pediatra o neuropediatra en los proximos 7 dias para seguimiento.');
 		}else{
 			$.mobile.changePage('#desFeno','slide');
 		}
@@ -499,7 +497,7 @@ function makeDes18To24(){
 	}else{
 		isBack = 0;
 		if (countNo >= 1){
-			addDesarrollo('Desarrollo retrasado');
+			addDesarrollo('Probable retraso del desarrollo. \n Se recomienda programar una cita con un pediatra o neuropediatra en los proximos 7 dias para seguimiento.');
 		}else{
 			$.mobile.changePage('#desFeno','slide');
 		}
@@ -546,7 +544,7 @@ function makeDes24To30(){
 	}else{
 		isBack = 0;
 		if (countNo >= 1){
-			addDesarrollo('Desarrollo retrasado');
+			addDesarrollo('Probable retraso del desarrollo. \n Se recomienda programar una cita con un pediatra o neuropediatra en los proximos 7 dias para seguimiento.');
 		}else{
 			$.mobile.changePage('#desFeno','slide');
 		}
@@ -593,7 +591,7 @@ function makeDes30To36(){
 	}else{
 		isBack = 0;
 		if (countNo >= 1){
-			addDesarrollo('Desarrollo retrasado');
+			addDesarrollo('Probable retraso del desarrollo. \n Se recomienda programar una cita con un pediatra o neuropediatra en los proximos 7 dias para seguimiento.');
 		}else{
 			$.mobile.changePage('#desFeno','slide');
 		}
@@ -640,7 +638,7 @@ function makeDes36To42(){
 	}else{
 		isBack = 0;
 		if (countNo >= 1){
-			addDesarrollo('Desarrollo retrasado');
+			addDesarrollo('Probable retraso del desarrollo. \n Se recomienda programar una cita con un pediatra o neuropediatra en los proximos 7 dias para seguimiento.');
 		}else{
 			$.mobile.changePage('#desFeno','slide');
 		}
@@ -687,7 +685,7 @@ function makeDes42To48(){
 	}else{
 		isBack = 0;
 		if (countNo >= 1){
-			addDesarrollo('Desarrollo retrasado');
+			addDesarrollo('Probable retraso del desarrollo. \n Se recomienda programar una cita con un pediatra o neuropediatra en los proximos 7 dias para seguimiento.');
 		}else{
 			$.mobile.changePage('#desFeno','slide');
 		}
@@ -734,7 +732,7 @@ function makeDes48To54(){
 	}else{
 		isBack = 0;
 		if (countNo >= 1){
-			addDesarrollo('Desarrollo retrasado');
+			addDesarrollo('Probable retraso del desarrollo. \n Se recomienda programar una cita con un pediatra o neuropediatra en los proximos 7 dias para seguimiento.');
 		}else{
 			$.mobile.changePage('#desFeno','slide');
 		}
@@ -781,7 +779,7 @@ function makeDes54To60(){
 	}else{
 		isBack = 0;
 		if (countNo >= 1){
-			addDesarrollo('Desarrollo retrasado');
+			addDesarrollo('Probable retraso del desarrollo. \n Se recomienda programar una cita con un pediatra o neuropediatra en los proximos 7 dias para seguimiento.');
 		}else{
 			$.mobile.changePage('#desFeno','slide');
 		}
@@ -828,7 +826,7 @@ function makeDes60To66(){
 	}else{
 		isBack = 0;
 		if (countNo >= 1){
-			addDesarrollo('Desarrollo retrasado');
+			addDesarrollo('Probable retraso del desarrollo. \n Se recomienda programar una cita con un pediatra o neuropediatra en los proximos 7 dias para seguimiento.');
 		}else{
 			$.mobile.changePage('#desFeno','slide');
 		}
@@ -875,7 +873,7 @@ function makeDes66To72(){
 	}else{
 		isBack = 0;
 		if (countNo >= 1){
-			addDesarrollo('Desarrollo retrasado');
+			addDesarrollo('Probable retraso del desarrollo. \n Se recomienda programar una cita con un pediatra o neuropediatra en los proximos 7 dias para seguimiento.');
 		}else{
 			$.mobile.changePage('#desFeno','slide');
 		}
