@@ -1467,7 +1467,7 @@ function calcularCrecimientoMasculino(){
 function addCrecimiento(){
 	calcularCrecimiento();
 	//spinnerplugin.show();
-	$.post('http://bcontrol.herokuapp.com/server.php', {opcion: '17', data: $('#formNewCrec').serialize(), email: emailLog, diagnostico: diagnostoicoCrecimiento})
+	$.post('http://bcontrol.herokuapp.com/server.php', {opcion: '17', data: $('#formNewCrec').serialize(), email: emailPaciente, diagnostico: diagnostoicoCrecimiento})
 			.done(function(data) {
 				console.log(data);
 				var convertidoAJson = JSON.parse(data);
